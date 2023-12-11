@@ -1,0 +1,30 @@
+//Задайте массив из вещественных чисел с ненулевой дробной частью. Найдите разницу между максимальным и минимальным элементов массива.
+
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        double[] numbers = new double[] { 3.14, 2.718, 1.618, 0.577, 1.732, 1.414, 2.303, 0.693, 0.866, 1.272 };
+
+        double minValue = numbers[0];
+        double maxValue = numbers[0];
+
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            if (numbers[i] < minValue)
+            {
+                minValue = numbers[i];
+            }
+            if (numbers[i] > maxValue)
+            {
+                maxValue = numbers[i];
+            }
+        }
+
+        double difference = maxValue - minValue;
+
+        Console.WriteLine($"Разница между максимальным и минимальным элементами массива: {difference}");
+    }
+}
