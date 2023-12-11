@@ -1,0 +1,34 @@
+//Дано натуральное число в диапазоне от 1 до 100 000. Создайте массив, состоящий из цифр этого числа. Старший разряд числа должен располагаться на 0-м индексе массива, младший – на последнем. Размер массива должен быть равен количеству цифр.
+
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        int number = 12345;
+
+        int[] digits = ConvertNumberToArray(number);
+
+        Console.WriteLine("Массив цифр числа:");
+        foreach (int digit in digits)
+        {
+            Console.WriteLine(digit);
+        }
+    }
+
+    public static int[] ConvertNumberToArray(int number)
+    {
+        int digitCount = (int)Math.Floor(Math.Log10(number) + 1); // Получение количества цифр числа
+
+        int[] digits = new int[digitCount]; // Создание массива с размером, равным количеству цифр
+
+        for (int i = digitCount - 1; i >= 0; i--)
+        {
+            digits[i] = number % 10; // Получение последней цифры числа
+            number /= 10; // Уменьшение числа на один разряд
+        }
+
+        return digits;
+    }
+}
