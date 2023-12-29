@@ -19,14 +19,13 @@ public class Program
 
     public static int[] ConvertNumberToArray(int number)
     {
-        int digitCount = (int)Math.Floor(Math.Log10(number) + 1); // Получение количества цифр числа
+        int digitCount = (int)Math.Floor(Math.Log10(number) + 1); 
 
-        int[] digits = new int[digitCount]; // Создание массива с размером, равным количеству цифр
-
+        int[] digits = new int[digitCount]; 
         for (int i = digitCount - 1; i >= 0; i--)
         {
-            digits[i] = number % 10; // Получение последней цифры числа
-            number /= 10; // Уменьшение числа на один разряд
+            digits[i] = number % 10; 
+            number /= 10; 
         }
 
         return digits;

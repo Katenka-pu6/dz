@@ -1,0 +1,32 @@
+//Задайте значения M и N. Напишите программу, которая выведет все 
+натуральные числа в промежутке от M до N. Использовать рекурсию, не использовать циклы.
+//
+
+using System;
+class Programm
+{
+    static void Main()
+    {
+    
+          Console.Write("Введите N");
+        int start = int.Parse(Console.Readline());
+        
+         Console.Write("Введите M");
+        int end = int.Parse(Console.Readline());
+        Klop(start, end);
+
+    }
+
+static void Klop(int start, int end)
+{
+    if (start <= end)
+    {
+        Console.Writeline(start);
+        Klop(++start, end);
+
+    }
+}
+
+
+}
+
